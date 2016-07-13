@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings version="2.1"
+                 xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+    <mapped-superclass class="guice.BaseEntity" access="FIELD" metadata-complete="true">
+        <attributes>
+            <id name="id" access="FIELD">
+                <column name="id"/>
+                <generated-value generator="MY_SEQ" strategy="SEQUENCE"/>
+            </id>
+            <basic name="id">
+                <column name="id" nullable="false"/>
+            </basic>
+        </attributes>
+    </mapped-superclass>
+</entity-mappings>

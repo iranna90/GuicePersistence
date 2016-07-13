@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings version="2.1"
+                 xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+    <sequence-generator name="MY_SEQ" allocation-size="1"
+                        sequence-name="my_seq" initial-value="1"/>
+    <entity class="guice.MyEntity" name="MyEntity"
+            metadata-complete="true" access="FIELD">
+        <table name="MyEntity"/>
+        <convert converter="guice.Converter" attribute-name="name" disable-conversion="false"/>
+        <attributes>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <many-to-one name="address" target-entity="guice.Address" access="FIELD" id="false" >
+                <join-column name="address_id" referenced-column-name="id"/>
+                <foreign-key name="id" disable-foreign-key="false"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

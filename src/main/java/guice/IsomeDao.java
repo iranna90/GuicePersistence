@@ -1,9 +1,8 @@
 package guice;
 
 public interface IsomeDao {
-	
-	    public MyEntity find(long id);
-	 
-	   
-	    public void save(MyEntity entity);
+
+    public <T> T find(String id, Class<T> clazz, String field);
+
+    public <T> void save(T entity);
 }

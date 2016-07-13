@@ -1,51 +1,20 @@
 package guice;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="company")
-public class MyEntity {
-
-	@Id
-	@Column(name = "Id")
-	private int id;
+public class MyEntity extends BaseEntity{
 	
-	@Column(name="Name")
 	private String name;
 
-	@Column(name="age")
-	private int age;
-	
-	@Column(name="address")
-	private String address;
-	
-	@Column(name = "salary")
-	private int salary;
-	
-	public MyEntity(int id, String name,int age,String address,int salary) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
+	private Address address;
+
+	public MyEntity() {
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
 		this.address = address;
-		this.salary = salary;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -60,6 +29,14 @@ public class MyEntity {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "MyEntity [id=" + id + ", name=" + name + "]";
 	}
 	
 	
