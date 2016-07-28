@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings version="2.1"
+                 xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+    <sequence-generator name="MY_SEQ" allocation-size="1"
+                        sequence-name="my_seq_add" initial-value="1" />
+    <entity class="entity.PersistEntity" name="PersistEntity"
+            metadata-complete="true" access="FIELD">
+        <table name="Node" />
+        <attributes>
+            <id name="nodeId">
+                <column name="node_id" />
+            </id>
+            <basic name="details">
+                <column name="details" />
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

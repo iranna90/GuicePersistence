@@ -7,23 +7,22 @@ import com.hazelcast.core.MapStore;
 import java.util.Collection;
 import java.util.Map;
 
-import entity.Employee;
 import persist.PersistApi;
-
+import entity.PersistEntity;
 /**
  * Created by iranna on 13-7-16.
  */
-public class Persist<String,Employee> implements MapStore<String, Employee> {
+public class Persist<String, PersistEntity> implements MapStore<String, PersistEntity> {
 
     @Inject
     PersistApi persistApi;
 
-    public void store(String s, Employee employee) {
+    public void store(String s, PersistEntity persistEntity) {
         System.out.println("calling perisstence");
-        persistApi.saveOrUpdate(employee);
+        persistApi.saveOrUpdate(persistEntity);
     }
 
-    public void storeAll(Map<String, Employee> map) {
+    public void storeAll(Map<String, PersistEntity> map) {
 
     }
 
@@ -35,11 +34,11 @@ public class Persist<String,Employee> implements MapStore<String, Employee> {
 
     }
 
-    public Employee load(String s) {
+    public PersistEntity load(String s) {
         return null;
     }
 
-    public Map<String, Employee> loadAll(Collection<String> collection) {
+    public Map<String, PersistEntity> loadAll(Collection<String> collection) {
         return null;
     }
 

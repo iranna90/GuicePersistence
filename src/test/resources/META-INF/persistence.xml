@@ -3,13 +3,13 @@
              version="1.0">
     <!-- Data base connection details for unit testing to run H2 (Can stay constant connection details as it will be used for unit testing) -->
     <persistence-unit name="titan-unit-test-db" transaction-type="RESOURCE_LOCAL">
-        <class>entity.Employee</class>
+        <class>jsonb.MyEntity</class>
         <properties>
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/Titan_DB" />
             <property name="hibernate.connection.username" value="postgres" />
             <property name="hibernate.connection.password" value="Jun@2016" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
+            <property name="hibernate.dialect" value="jsonb.MyPostgreSQL94Dialect"/>
             <property name="hibernate.connection.pool_size" value="10"/>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
         </properties>
