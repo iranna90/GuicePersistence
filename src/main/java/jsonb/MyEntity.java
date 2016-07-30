@@ -11,7 +11,7 @@ import org.hibernate.annotations.TypeDef;
 
 @TypeDef(name = "MyJsonType", typeClass = MyJsonType.class)
 @Entity
-public class MyEntity {
+public class MyEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO, generator="my_seq_gen")

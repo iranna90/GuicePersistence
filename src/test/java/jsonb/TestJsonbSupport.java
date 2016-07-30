@@ -15,8 +15,6 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
-
 public class TestJsonbSupport {
 
     Logger log = Logger.getLogger(this.getClass().getName());
